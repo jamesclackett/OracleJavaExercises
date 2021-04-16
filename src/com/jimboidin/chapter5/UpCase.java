@@ -9,7 +9,6 @@ public class UpCase {
         short c = (short) (a ^ b);
         int d = a + b;
 
-        //Print statements:
         System.out.println("a: " + Integer.toBinaryString(a));
         System.out.println("b: " + Integer.toBinaryString(b));
         System.out.println("XOR (a ^ b): " + Integer.toBinaryString(c));
