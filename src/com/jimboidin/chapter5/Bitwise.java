@@ -1,6 +1,6 @@
 package com.jimboidin.chapter5;
 
-public class UpCase {
+public class Bitwise {
 
     public static void main(String[] args) {
         // write your code here
