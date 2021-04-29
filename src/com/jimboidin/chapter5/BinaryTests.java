@@ -4,11 +4,14 @@ package com.jimboidin.chapter5;
 public class BinaryTests {
     public static void main(String[] args){
 
-        int c = -2147483648;
+        int c = 1;
         System.out.println(Integer.toBinaryString(c) + ", " + c);
-        c = c >>> 1;
+        c <<= 7;
+        System.out.println(Integer.toBinaryString(c) + ", " + c);
+        c >>= 10;
         System.out.println(Integer.toBinaryString(c) + ", " + c);
     }
+
     
 
 }
