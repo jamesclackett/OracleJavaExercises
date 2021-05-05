@@ -6,18 +6,15 @@ public class ShowBitsDemo {
         ShowBits i = new ShowBits(32);
         ShowBits li = new ShowBits(64);
 
-        System.out.println("123 in binary: ");
-        b.show(123);
 
-        System.out.println("\n87987 in binary: ");
-        i.show(87987);
+        System.out.println("Integer.MAX_VALUE: " + Integer.MAX_VALUE);
+        i.show(Integer.MAX_VALUE);
 
-        System.out.println("\n237658768 in binary: ");
-        li.show(237658768);
+        System.out.println("Integer.MAX_VALUE + 1: " + (Integer.MAX_VALUE + 1));
+        i.show(Integer.MAX_VALUE + 1);
 
-        // you can also show low-order bits of any integer
-        System.out.println("\nLow-order 8 bits of 87987 in binary: ");
-        b.show(87987);
+        System.out.println("Integer.MIN_VALUE: " + Integer.MIN_VALUE);
+        i.show(Integer.MIN_VALUE);
 
     }
 
