@@ -1,5 +1,7 @@
 package com.jimboidin.chapter6;
 
+import com.jimboidin.chapter8.ICharQ;
+
 public class QuickSortTest {
     public static void main(String[] args){
         char[] a = {'d', 'x', 'a', 'r', 'p', 'j', 'i'};
@@ -21,7 +23,7 @@ public class QuickSortTest {
     }
 }
 
-class QuickSort{
+class QuickSort {
     // setup a call to the actual quicksort method
     static void qsort(char[] items){
         qs(items, 0, items.length-1);
