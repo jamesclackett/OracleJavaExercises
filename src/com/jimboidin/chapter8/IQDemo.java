@@ -1,14 +1,49 @@
 package com.jimboidin.chapter8;
+import com.jimboidin.chapter9.QueueFullException;
+import com.jimboidin.chapter9.QueueEmptyException;
 
 public class IQDemo {
     public static void main(String[] args){
-        FixedQueue q = new FixedQueue(3);
-        q.testMethod(); //uses default method from interface ICharQ. notice no implementation below
+        FixedQueue q = new FixedQueue(10);
+        char ch; int i;
+
+        try {
+            // overrun the queue
+            for (i = 0; i < 11; i++){
+                System.out.print("Attempting to store : " + (char) ('A' + i));
+                q.put((char) ('A' + i));
+                System.out.println(" - OK");
+            }
+            System.out.println();
+        }
+        catch (QueueFullException exc){
+            System.out.println(exc);
+        }
+        System.out.println();
+
+        try {
+            //over-empty the queue
+            for (i = 0; i < 11; i++){
+                System.out.print("Getting next char: ");
+                ch = q.get();
+                System.out.println(ch);
+            }
+        }
+        catch (QueueEmptyException exc){
+            System.out.println(exc);
+        }
+
+
+
+
+
+
     }
 }
 
 
 // A fixed-size queue class for characters
+// 07/05/21 Updated to throw custom Exceptions from chapter 9.
 class FixedQueue implements ICharQ{
     private char[] q; // this array holds the queue
     private int putloc, getloc; // the put and get indices
@@ -21,20 +56,18 @@ class FixedQueue implements ICharQ{
 
     // Put a character into the queue
     @Override
-    public void put(char ch) {
+    public void put(char ch) throws QueueFullException {
         if (putloc == q.length){
-            System.out.println(" - Queue is full.");
-            return;
+            throw new QueueFullException(q.length);
         }
         q[putloc++] = ch;
     }
 
     // Get a character from the queue
     @Override
-    public char get() {
+    public char get() throws QueueEmptyException {
         if (getloc == putloc){
-            System.out.println(" - Queue is empty.");
-            return (char) 0;
+            throw new QueueEmptyException();
         }
         return q[getloc++];
     }

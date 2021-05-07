@@ -1,4 +1,4 @@
-package com.jimboidin.firstProject;
+package com.jimboidin.chapter1;
 
 import java.io.IOException;
 
