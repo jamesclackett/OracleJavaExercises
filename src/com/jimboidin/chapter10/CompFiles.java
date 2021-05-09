@@ -17,7 +17,7 @@ import java.io.*;
 public class CompFiles {
 
     public static void main(String[] args) throws IOException {
-        args = new String[]{"rc/com/jimboidin/chapter10/FIRST.TXT",
+        args = new String[]{"src/com/jimboidin/chapter10/FIRST.TXT",
                             "src/com/jimboidin/chapter10/SECOND.TXT"};
         int  i=0, j=0;
 
