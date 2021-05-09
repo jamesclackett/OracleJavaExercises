@@ -1,7 +1,8 @@
 package com.jimboidin.chapter9;
 
-public class TestThrow {
+import com.jimboidin.chapter10.CompFiles;
 
+public class TestThrow {
     public static char prompt(String str) throws java.io.IOException {
         System.out.print(str + ": ");
         return (char) System.in.read();

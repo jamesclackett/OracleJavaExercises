@@ -13,13 +13,13 @@ import java.io.*;
     java CompFile FIRST.TXT SECOND.TXT
  */
 
+
 public class CompFiles {
-    public static void main(String[] args){
-        args = new String[]{"FIRST.TXT", "src/com/jimboidin/chapter10/THIRD.TXT"};
+
+    public static void main(String[] args) throws IOException {
+        args = new String[]{"rc/com/jimboidin/chapter10/FIRST.TXT",
+                            "src/com/jimboidin/chapter10/SECOND.TXT"};
         int  i=0, j=0;
-        File file = new File("name");
-        System.out.println(System.getProperty("user.dir"));
-        System.out.println(file.getAbsolutePath());
 
         if (args.length != 2){
             System.out.println("Usage: CompFiles f1 f2");
