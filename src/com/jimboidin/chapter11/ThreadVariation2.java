@@ -1,6 +1,7 @@
 package com.jimboidin.chapter11;
 
-/*  MyThreadV2 creates a Thread when its constructor is called
+/*
+    MyThreadV2 creates a Thread when its constructor is called
     and stores it in an instance variable called thread.
     It also sets the name of the thread and provides a
     factory method to create and start a thread.
@@ -17,7 +18,11 @@ class MyThreadV2 implements Runnable{
         thread = new Thread(this, name);
     }
 
-    // A factory method that creates and starts a thread
+    /*
+        A factory method that creates and starts a thread
+        This method basically does what ThreadVariation does
+        inside a static class instead.
+     */
     public static MyThreadV2 createAndStart(String name){
         MyThreadV2 myThreadV2 = new MyThreadV2(name);
         myThreadV2.thread.start(); // start the thread
