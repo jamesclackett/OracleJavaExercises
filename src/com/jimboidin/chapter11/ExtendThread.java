@@ -30,6 +30,7 @@ class MyThreadV3 extends Thread{
 
 
 public class ExtendThread{
+
     public static void main(String[] args){
         System.out.println("Main thread starting");
 
