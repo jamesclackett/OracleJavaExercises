@@ -4,6 +4,7 @@ package com.jimboidin.chapter12;
 //Try this 12-1
 
 //A simulation of a traffic light that uses an enumeration to describe the lights color
+// synchronised methods allow the use of wait() and notify() which are needed for this app.
 
 // An enumeration of the colors of a traffic light
 enum TrafficLightColor{
