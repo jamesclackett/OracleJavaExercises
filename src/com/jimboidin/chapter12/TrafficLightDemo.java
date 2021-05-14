@@ -64,6 +64,7 @@ class TrafficLightSimulator implements Runnable {
         notify(); // signal that the light has changed
     }
 
+
     // Wait until a light change occurs
     synchronized void waitForChange(){
         try {
