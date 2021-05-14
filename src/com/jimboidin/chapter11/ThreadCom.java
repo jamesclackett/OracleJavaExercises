@@ -16,8 +16,10 @@ class TickTock {
 
         notify();
         try {
-            while (!state.equals("tocked"))
+            while (!state.equals("tocked")){
                 wait();
+            }
+
         }
         catch (InterruptedException exc) {
             System.out.println("Thread interrupted");
@@ -36,8 +38,9 @@ class TickTock {
 
         notify(); // let tick() run
         try {
-            while (!state.equals("ticked"))
+            while (!state.equals("ticked")) {
                 wait(); // wait for tick to complete
+            }
         } catch (InterruptedException exc){
             System.out.println("Thread interrupted");
         }
@@ -63,7 +66,7 @@ class ClockThread implements Runnable{
 
     @Override
     public void run() {
-        if (thread.getName().compareTo("Tick") == 0){
+        if (thread.getName().compareTo("TickThread") == 0){
             for (int i = 0; i < 5; i++) ttOb.tick(true);
             ttOb.tick(false);
         }
@@ -77,8 +80,8 @@ class ClockThread implements Runnable{
 public class ThreadCom {
     public static  void main(String[] args){
         TickTock tt = new TickTock();
-        ClockThread clockThread1 = ClockThread.createAndStart("Tick", tt);
-        ClockThread clockThread2 = ClockThread.createAndStart("Tock", tt);
+        ClockThread clockThread1 = ClockThread.createAndStart("TickThread", tt);
+        ClockThread clockThread2 = ClockThread.createAndStart("TockThread", tt);
 
         try {
             clockThread1.thread.join();

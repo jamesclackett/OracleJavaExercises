@@ -44,6 +44,7 @@ public class IQDemo {
 
 // A fixed-size queue class for characters
 // 07/05/21 Updated to throw custom Exceptions from chapter 9.
+// 13/05/21 Updated to allow synchronized multi-threaded use (Chapter 11).
 class FixedQueue implements ICharQ{
     private char[] q; // this array holds the queue
     private int putloc, getloc; // the put and get indices
@@ -56,7 +57,7 @@ class FixedQueue implements ICharQ{
 
     // Put a character into the queue
     @Override
-    public void put(char ch) throws QueueFullException {
+    synchronized public void put(char ch) throws QueueFullException {
         if (putloc == q.length){
             throw new QueueFullException(q.length);
         }
@@ -65,7 +66,7 @@ class FixedQueue implements ICharQ{
 
     // Get a character from the queue
     @Override
-    public char get() throws QueueEmptyException {
+    synchronized public char get() throws QueueEmptyException {
         if (getloc == putloc){
             throw new QueueEmptyException();
         }
