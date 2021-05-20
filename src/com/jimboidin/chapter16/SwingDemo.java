@@ -1,6 +1,7 @@
 package com.jimboidin.chapter16;
 
 import javax.swing.*;
+import java.awt.*;
 
 // A simple Swing program
 
@@ -21,7 +22,7 @@ public class SwingDemo {
         JLabel jlab = new JLabel(" GUI programming with Swing.");
 
         // Add a label to the content pane
-        jfrm.add(jlab);
+        jfrm.add(jlab, BorderLayout.EAST);
 
         // Display the frame
         jfrm.setVisible(true);
